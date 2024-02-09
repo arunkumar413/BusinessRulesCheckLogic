@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
 import jsonRules from './rules.json';
 
 function App() {
+  const myRules = jsonRules;
   const [allSatisfied, setAllSatisfied] = useState(0);
-
+  
   const data = {
     age: 20,
     isStudent: true,
@@ -45,14 +43,14 @@ function App() {
     }
   }
 
-  const myRules = jsonRules;
 
+
+useEffect(function(){
   const result = myRules.rules.every((rule) => evaluateRule(rule, data));
-
   console.log(result);
   setAllSatisfied(result);
-  // Output: true or false based on whether all conditions are satisfied
 
+},[])
   return (
     <>
       <div>{allSatisfied ? 'All condtions satisfied' : 'Not satisfied'}</div>
