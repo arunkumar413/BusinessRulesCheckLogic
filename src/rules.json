@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "condition": "all",
+      "conditions": [
+        {
+          "field": "age",
+          "operator": ">",
+          "value": 18
+        },
+        {
+          "field": "isStudent",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    {
+      "condition": "any",
+      "conditions": [
+        {
+          "field": "income",
+          "operator": ">=",
+          "value": 50000
+        },
+        {
+          "field": "hasJob",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    }
+  ]
+}
